@@ -3,7 +3,7 @@
     "Name": "Suit",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 200,
-    "PictureUrl": "images/products/sb-ang1.png",
+    "PictureUrl": "images/products/white_ and_black_suit.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
@@ -11,7 +11,7 @@
     "Name": "Jumper",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
     "Price": 150,
-    "PictureUrl": "images/products/sb-ang2.png",
+    "PictureUrl": "images/products/grey_jumper.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 1
   },
@@ -19,7 +19,7 @@
     "Name": "Suit",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 180,
-    "PictureUrl": "images/products/sb-core1.png",
+    "PictureUrl": "images/products/white_black_red_suit.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 2
   },
@@ -27,7 +27,7 @@
     "Name": "Jumper",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 300,
-    "PictureUrl": "images/products/sb-core2.png",
+    "PictureUrl": "images/products/brown_jumper.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 2
   },
@@ -35,7 +35,7 @@
     "Name": "Jeans",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 250,
-    "PictureUrl": "images/products/sb-react1.png",
+    "PictureUrl": "images/products/jeans.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 4
   },
@@ -43,7 +43,7 @@
     "Name": "Shorts",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 120,
-    "PictureUrl": "images/products/sb-ts1.png",
+    "PictureUrl": "images/products/blue_reebook_shorts.jpg",
     "ProductTypeId": 1,
     "ProductBrandId": 5
   },
@@ -51,7 +51,7 @@
     "Name": "Trainers",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 10,
-    "PictureUrl": "images/products/hat-core1.png",
+    "PictureUrl": "images/products/blue_and_white_puma_trainers.jpg",
     "ProductTypeId": 2,
     "ProductBrandId": 2
   },
@@ -59,23 +59,23 @@
     "Name": "Boots",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 8,
-    "PictureUrl": "images/products/hat-react1.png",
+    "PictureUrl": "images/products/black_columbia_boots.jpg",
     "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "ProductBrandId": 6
   },
   {
     "Name": "Trainers",
     "Description": "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 15,
-    "PictureUrl": "images/products/hat-react2.png",
+    "PictureUrl": "images/products/white_fila_trainers.jpg",
     "ProductTypeId": 2,
-    "ProductBrandId": 4
+    "ProductBrandId": 3
   },
   {
     "Name": "Sunglasses",
     "Description": "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
     "Price": 18,
-    "PictureUrl": "images/products/glove-code1.png",
+    "PictureUrl": "images/products/black_fila_sunglasses.jpg",
     "ProductTypeId": 4,
     "ProductBrandId": 3
   },
@@ -83,15 +83,15 @@
     "Name": "Belt",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 15,
-    "PictureUrl": "images/products/glove-code2.png",
+    "PictureUrl": "images/products/black_adidas_belt.jpg",
     "ProductTypeId": 4,
-    "ProductBrandId": 3
+    "ProductBrandId": 1
   },
   {
     "Name": "Gloves",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.",
     "Price": 16,
-    "PictureUrl": "images/products/glove-react1.png",
+    "PictureUrl": "images/products/black_colins_gloves.jpg",
     "ProductTypeId": 4,
     "ProductBrandId": 4
   },
@@ -99,7 +99,7 @@
     "Name": "Gloves",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 14,
-    "PictureUrl": "images/products/glove-react2.png",
+    "PictureUrl": "images/products/red_colins_gloves.jpg",
     "ProductTypeId": 4,
     "ProductBrandId": 4
   },
@@ -107,7 +107,7 @@
     "Name": "Purse",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 250,
-    "PictureUrl": "images/products/boot-redis1.png",
+    "PictureUrl": "images/products/red_columbia_purse.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 6
   },
@@ -115,7 +115,7 @@
     "Name": "Backpack",
     "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
     "Price": 189.99,
-    "PictureUrl": "images/products/boot-core2.png",
+    "PictureUrl": "images/products/blue_puma_backpack.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 2
   },
@@ -123,7 +123,7 @@
     "Name": "Purse",
     "Description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
     "Price": 199.99,
-    "PictureUrl": "images/products/boot-core1.png",
+    "PictureUrl": "images/products/black_puma_purse.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 2
   },
@@ -131,7 +131,7 @@
     "Name": "Bag",
     "Description": "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
     "Price": 150,
-    "PictureUrl": "images/products/boot-ang2.png",
+    "PictureUrl": "images/products/white_adidas_bag.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   },
@@ -139,7 +139,7 @@
     "Name": "Backpack",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 180,
-    "PictureUrl": "images/products/boot-ang1.png",
+    "PictureUrl": "images/products/black_adidas_backpack",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   }
