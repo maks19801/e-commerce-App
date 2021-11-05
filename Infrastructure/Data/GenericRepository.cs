@@ -16,6 +16,12 @@ namespace Core.Entities
       _context = context;
 
     }
+
+    public async Task<int> CountAsync(ISpecification<T> specification)
+    {
+      return await ApplySpecification(specification).CountAsync();
+    }
+
     public async Task<IReadOnlyList<T>> GetAllAsync()
     {
       return await _context.Set<T>().ToListAsync();
