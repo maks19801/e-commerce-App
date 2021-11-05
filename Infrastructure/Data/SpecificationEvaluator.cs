@@ -21,9 +21,14 @@ namespace Infrastructure.Data
                 query = query.OrderBy(specification.OrderBy);
             }
 
-            if (specification.OrderByDescending != null)
+            if(specification.OrderByDescending != null)
             {
                 query = query.OrderByDescending(specification.OrderByDescending);
+            }
+
+            if(specification.IsPaginationEnabled)
+            {
+                query = query.Skip(specification.Skip).Take(specification.Take);
             }
 
 
