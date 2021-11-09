@@ -139,7 +139,7 @@
     "Name": "Backpack",
     "Description": "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
     "Price": 180,
-    "PictureUrl": "images/products/black_adidas_backpack",
+    "PictureUrl": "images/products/black_adidas_backpack.jpg",
     "ProductTypeId": 3,
     "ProductBrandId": 1
   }
