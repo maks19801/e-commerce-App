@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../shared/models/Product';
 import { IProductBrand } from '../shared/models/ProductBrand';
 import { IProductType } from '../shared/models/ProductType';
+import { ShopParams } from '../shared/models/ShopParams';
 import { ShopService } from './shop.service';
 
 @Component({
@@ -9,17 +10,18 @@ import { ShopService } from './shop.service';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss'],
 })
+
 export class ShopComponent implements OnInit {
   products: IProduct[];
   brands: IProductBrand[];
   types: IProductType[];
-  brandIdSelected = 0;
-  typeIdSelected = 0;
-  sortSelected = 'name';
+  shopParams = new ShopParams();
+  page = 1;
+  totalProductsCount: number;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
-    {name: 'Price:Low to High', value: 'priceAcs'},
-    {name: 'Price:High to Low', value: 'priceDesc'}
+    {name: 'Price: Low to High', value: 'priceAsc'},
+    {name: 'Price: High to Low', value: 'priceDesc'}
   ];
 
   constructor(private readonly shopService: ShopService) {}
@@ -31,14 +33,20 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts() {
-    this.shopService.getProducts(this.brandIdSelected, this.typeIdSelected, this.sortSelected).subscribe(
-      (response) => {
-        this.products = response.data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    this.shopService
+      .getProducts(this.shopParams)
+      .subscribe(
+        (response) => {
+          this.products = response.data;
+          this.shopParams.pageNumber = response.pageIndex;
+          this.shopParams.pageSize = response.pageSize;
+          this.totalProductsCount = response.count;
+          console.log(this.shopParams.pageNumber);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
   getBrands() {
     this.shopService.getBrands().subscribe(
@@ -61,17 +69,22 @@ export class ShopComponent implements OnInit {
     );
   }
   onBrandSelected(brandId: number) {
-    this.brandIdSelected = brandId;
+    this.shopParams.brandId = brandId;
     this.getProducts();
   }
 
   onTypeSelected(typeId: number){
-    this.typeIdSelected = typeId;
+    this.shopParams.typeId = typeId;
     this.getProducts();
   }
 
   onSortSelected(sort: string){
-    this.sortSelected = sort;
+    this.shopParams.sort = sort;
+    this.getProducts();
+  }
+
+  onPageChanged(page){
+    this.shopParams.pageNumber = page;
     this.getProducts();
   }
 }
