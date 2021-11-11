@@ -16,7 +16,7 @@ export class ShopComponent implements OnInit {
   brands: IProductBrand[];
   types: IProductType[];
   shopParams = new ShopParams();
-  page = 1;
+  page: number;
   totalProductsCount: number;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
@@ -83,8 +83,8 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
-  onPageChanged(page){
-    this.shopParams.pageNumber = page;
+  onPageChanged(event: any){
+    this.shopParams.pageNumber = event;
     this.getProducts();
   }
 }

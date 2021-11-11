@@ -1,0 +1,19 @@
+<header>
+  <span *ngIf="totalProductsCount && totalProductsCount > 0; else noResults"
+    >Showing
+    <strong>
+      {{ (pageNumber - 1) * pageSize + 1 }} -
+      {{
+        pageNumber * pageSize >
+        this.totalProductsCount
+          ? this.totalProductsCount
+          : pageNumber * pageSize
+      }}
+    </strong>
+    of <strong>{{ totalProductsCount }}</strong> Results</span
+  >
+
+  <ng-template #noResults>
+     There are <strong>0</strong> results for this filter
+  </ng-template>
+</header>
