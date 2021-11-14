@@ -15,31 +15,37 @@ export class ShopService {
   constructor(private readonly httpClient: HttpClient) {}
 
   getProducts(shopParams: ShopParams) {
-
     let params = new HttpParams();
-    if(shopParams.brandId !==0){
+    if (shopParams.brandId !== 0) {
       params = params.append('brandId', shopParams.brandId);
     }
-    if (shopParams.typeId !==0) {
+    if (shopParams.typeId !== 0) {
       params = params.append('typeId', shopParams.typeId);
     }
-
+    if (shopParams.search) {
+      params = params.append('search', shopParams.search);
+    }
     params = params.append('sort', shopParams.sort);
     params = params.append('pageIndex', shopParams.pageNumber);
     params = params.append('pageSize', shopParams.pageSize);
 
-    return this.httpClient.get<IPagination>(
-      this.baseUrl + 'products',{observe: 'response', params}
-    ).pipe(
-      map(response => {
-        console.log(response.body)
-        return response.body;
+    return this.httpClient
+      .get<IPagination>(this.baseUrl + 'products', {
+        observe: 'response',
+        params,
       })
-    )
+      .pipe(
+        map((response) => {
+          console.log(response.body);
+          return response.body;
+        })
+      );
   }
 
   getBrands() {
-    return this.httpClient.get<IProductBrand[]>(this.baseUrl + 'products/brands');
+    return this.httpClient.get<IProductBrand[]>(
+      this.baseUrl + 'products/brands'
+    );
   }
   getTypes() {
     return this.httpClient.get<IProductType[]>(this.baseUrl + 'products/types');
