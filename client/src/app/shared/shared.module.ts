@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaginationHeaderComponent } from './components/pagination-header/pagination-header.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
@@ -8,11 +8,12 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 
 @NgModule({
   declarations: [PaginationHeaderComponent, PaginationComponent],
-  imports: [CommonModule, NgbPaginationModule],
+  imports: [CommonModule, NgbPaginationModule, NgbCarouselModule],
   exports: [
     NgbPaginationModule,
     PaginationHeaderComponent,
     PaginationComponent,
+    NgbCarouselModule,
   ]
 })
 export class SharedModule {}

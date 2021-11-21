@@ -1,1 +1,22 @@
-<p>home works!</p>
+<ngb-carousel>
+  <ng-template ngbSlide>
+
+
+      <img src="assets/images/home-page/clothes-photo.jpg" alt="second slide" style="display: block; width: 100%;">
+
+
+
+  </ng-template>
+  <ng-template ngbSlide>
+     <img src="assets/images/home-page/trainers-photo.jpg" alt="first slide" style="display: block; width: 100%;">
+  </ng-template>
+  <ng-template ngbSlide>
+      <img src="assets/images/home-page/christmass-photo.jpg" alt="third slide" style="display: block; width: 100%;">
+  </ng-template>
+</ngb-carousel>
+<section class="welcome ">
+  <div class="d-flex justify-content-center pt-3">
+     <h3 [routerLink]="['/shop']" routerLinkActive="router-link-active" >Welcome to Our Shop!</h3>
+  </div>
+
+</section>
