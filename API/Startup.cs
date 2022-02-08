@@ -1,20 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 using API.Helpers;
 using Core.Entities;
+using Core.Entities.Identity;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Identity;
+using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace API
@@ -35,10 +35,31 @@ namespace API
     {
       services.AddScoped<IProductRepository, ProductRepository>();
       services.AddScoped<IBasketRepository, BasketRepository>();
+      services.AddScoped<ITokenService, TokenService>();
       services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
       services.AddAutoMapper(typeof(MappingProfiles));
       services.AddControllers();
       services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<AppIdentityDbContext>(x => {
+         x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+      });
+
+
+        IdentityBuilder identityBuilder = services.AddIdentityCore<AppUser>()
+        .AddEntityFrameworkStores<AppIdentityDbContext>()
+        .AddSignInManager<SignInManager<AppUser>>();
+
+      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+      {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+          ValidateIssuerSigningKey = true,
+          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Token:Key"])),
+          ValidIssuer = _config["Token:Issuer"],
+          ValidateIssuer = true,
+          ValidateAudience = false
+        };
+      });
       services.AddSwaggerGen(c =>
       {
           c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
@@ -70,7 +91,7 @@ namespace API
       app.UseCors("devCors");
       
       app.UseStaticFiles();
-
+      app.UseAuthentication();
       app.UseAuthorization();
 
       app.UseEndpoints(endpoints =>
